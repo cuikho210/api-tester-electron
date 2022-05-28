@@ -12,6 +12,22 @@ input, textarea, button {
     font-family: 'Mali', cursive;
 }
 
+input {
+    box-sizing: border-box;
+    padding: .75rem 1rem;
+    box-shadow: inset 2px 2px .25rem rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: .25rem;
+    margin: .25rem 0;
+    margin-right: .5rem;
+    width: 100%;
+}
+
+input:focus {
+    box-shadow: 2px 2px .25rem rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
 .container {
     width: 100%;
     margin: 0 auto;
@@ -93,6 +109,7 @@ input, textarea, button {
     margin: .25rem 0;
     margin-right: .5rem;
     width: 100%;
+    font-size: 14px;
 }
 
 #data:focus {

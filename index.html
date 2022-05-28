@@ -16,27 +16,33 @@
 </head>
 <body>
     <div class="container">
-        <form action="">
+        <form action="" onsubmit="return false">
+            <div>
+                <h1>URL</h1>
+
+                <input type="text" id="url" placeholder="http://localhost:3000/test" value="">
+            </div>
+
             <div>
                 <h1>Method</h1>
 
                 <label class="radio">
-                    <input type="radio" name="method" value="get">
+                    <input type="radio" name="method" value="GET" checked>
                     <span>GET</span>
                 </label>
 
                 <label class="radio">
-                    <input type="radio" name="method" value="post">
+                    <input type="radio" name="method" value="POST">
                     <span>POST</span>
                 </label>
 
                 <label class="radio">
-                    <input type="radio" name="method" value="put">
+                    <input type="radio" name="method" value="PUT">
                     <span>PUT</span>
                 </label>
 
                 <label class="radio">
-                    <input type="radio" name="method" value="delete">
+                    <input type="radio" name="method" value="DELETE">
                     <span>DELETE</span>
                 </label>
             </div>
@@ -45,18 +51,10 @@
                 <h1>Header</h1>
 
                 <div id="headers">
-                    <div class="header">
-                        <input type="text" placeholder="Key">
-                        <input type="text" placeholder="Value">
-                        <button type="button">&#10007;</button>
-                    </div>
-
-                    <div class="header">
-                        <input type="text" placeholder="Key">
-                        <input type="text" placeholder="Value">
-                        <button type="button">&#10007;</button>
-                    </div>
+                    
                 </div>
+
+                <button type="button" onclick="addHeader()" class="btn">Add</button>
             </div>
 
             <div>
@@ -66,7 +64,7 @@
             </div>
             <br>
 
-            <button class="btn">Send</button>
+            <button class="btn" onclick="send()">Send</button>
         </form>
     </div>
 </body>
