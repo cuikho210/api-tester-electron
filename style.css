@@ -1,0 +1,81 @@
+body {
+    font-family: 'Mali', cursive;
+    font-size: 14px;
+}
+
+h1 {
+    border-bottom: 1px solid #eee;
+    padding: .5rem 0;
+}
+
+input {
+    font-family: 'Mali', cursive;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    box-shadow: 2px 2px .5rem rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-sizing: border-box;
+}
+
+.radio {
+    margin-right: .5rem;
+}
+
+.radio span {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: .25rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 2px 2px .25rem rgba(0, 0, 0, 0.1);
+    transition: color .5s;
+}
+
+.radio input[type="radio"] {
+    display: none;
+}
+
+.radio input[type="radio"]:checked + span {
+    box-shadow: inset 2px 2px .25rem rgba(0, 0, 0, 0.1);
+    color: #ff907f;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.header input[type="text"] {
+    box-sizing: border-box;
+    padding: .75rem 1rem;
+    box-shadow: inset 2px 2px .25rem rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: .25rem;
+    margin: .25rem 0;
+    margin-right: .5rem;
+    width: 100%;
+}
+
+.header input[type="text"]:focus {
+    box-shadow: 2px 2px .25rem rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.header button {
+    border: none;
+    padding: .75rem 1rem;
+    border-radius: .25rem;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: background-color .5s;
+    box-shadow: 2px 2px .25rem rgba(0, 0, 0, 0.1);
+}
