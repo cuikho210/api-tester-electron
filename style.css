@@ -8,7 +8,7 @@ h1 {
     padding: .5rem 0;
 }
 
-input {
+input, textarea, button {
     font-family: 'Mali', cursive;
 }
 
@@ -77,4 +77,42 @@ input {
     cursor: pointer;
     transition: background-color .5s;
     box-shadow: 2px 2px .25rem rgba(0, 0, 0, 0.1);
+}
+
+.header button:active {
+    box-shadow: inset 2px 2px .25rem rgba(0, 0, 0, 0.1);
+    color: #666;
+}
+
+#data {
+    box-sizing: border-box;
+    padding: .75rem 1rem;
+    box-shadow: inset 2px 2px .25rem rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: .25rem;
+    margin: .25rem 0;
+    margin-right: .5rem;
+    width: 100%;
+}
+
+#data:focus {
+    box-shadow: 2px 2px .25rem rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.btn {
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: .25rem;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: background-color .5s;
+    box-shadow: 2px 2px .25rem rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+
+.btn:active {
+    box-shadow: inset 2px 2px .25rem rgba(0, 0, 0, 0.1);
+    color: #666;
 }
