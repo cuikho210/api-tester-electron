@@ -13,7 +13,7 @@ function send () {
     xhr.open(method, url, true);
 
     for (let i = 0; i < headers.length; i++) {
-        xhr.setRequestHeader(headers[i].name, headers[i].value);
+        xhr.setRequestHeader(headers[i].key, headers[i].value);
     }
 
     xhr.onload = () => {
@@ -28,7 +28,7 @@ function send () {
     xhr.send(data);
 }
 
-function addHeader () {
+function addHeader (keyData = '', valueData = '') {
     let key = document.createElement('input');
     let value = document.createElement('input');
     let button = document.createElement('button');
@@ -39,6 +39,9 @@ function addHeader () {
     
     key.setAttribute('placeholder', 'Key');
     value.setAttribute('placeholder', 'Value');
+
+    key.value = keyData;
+    value.value = valueData;
     
     button.innerHTML = '&#10007;';
     
@@ -94,4 +97,10 @@ function getHeaders () {
     }
 
     return result;
+}
+
+window.onload = () => {
+    addHeader('Content-Type', 'application/json');
+
+    $('#data').value = '{\n\t"name": "",\n\t"username": "",\n\t"email": "",\n\t"password": ""\n}';
 }
