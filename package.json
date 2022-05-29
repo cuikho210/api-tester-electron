@@ -28,24 +28,60 @@
       "packagerConfig": {},
       "makers": [
         {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "api_tester"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
+          "name": "@electron-forge/maker-zip"
         },
         {
           "name": "@electron-forge/maker-deb",
-          "config": {}
+          "config": {
+            "options": {
+              "name": "api-tester",
+              "genericName": "API Tester",
+              "description": "An API Tester Application",
+              "version": "1.0.0",
+              "categories": [
+                "Development"
+              ],
+              "icon": "./icon.svg"
+            }
+          }
         },
         {
           "name": "@electron-forge/maker-rpm",
-          "config": {}
+          "config": {
+            "options": {
+              "name": "api-tester",
+              "genericName": "API Tester",
+              "description": "An API Tester Application",
+              "version": "1.0.0",
+              "categories": [
+                "Development"
+              ],
+              "icon": "./icon.svg"
+            }
+          }
+        },
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "api-tester",
+            "authors": "cuikho210",
+            "owners": "cuikho210",
+            "description": "An API Tester Application",
+            "version": "1.0.0",
+            "exe": "api-tester",
+            "iconUrl": "./icon.svg"
+          }
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "cuikho210",
+              "name": "api-tester-electron"
+            }
+          }
         }
       ]
     }
