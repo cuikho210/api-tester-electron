@@ -4,86 +4,35 @@
   "description": "An API Tester Application",
   "main": "main.js",
   "scripts": {
-    "start": "electron-forge start",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "author": "cuikho210",
   "license": "ISC",
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.63",
-    "@electron-forge/maker-deb": "^6.0.0-beta.63",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
-    "@electron-forge/maker-zip": "^6.0.0-beta.63",
-    "electron": "^19.0.1"
+    "electron": "^19.0.1",
+    "electron-builder": "^23.0.3"
   },
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.0",
-    "rpmbuild": "^0.0.23"
-  },
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-zip"
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {
-            "options": {
-              "name": "api-tester",
-              "genericName": "API Tester",
-              "description": "An API Tester Application",
-              "version": "1.0.0",
-              "categories": [
-                "Development"
-              ],
-              "icon": "./icon.svg"
-            }
-          }
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {
-            "options": {
-              "name": "api-tester",
-              "genericName": "API Tester",
-              "description": "An API Tester Application",
-              "version": "1.0.0",
-              "categories": [
-                "Development"
-              ],
-              "icon": "./icon.svg"
-            }
-          }
-        },
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "api-tester",
-            "authors": "cuikho210",
-            "owners": "cuikho210",
-            "description": "An API Tester Application",
-            "version": "1.0.0",
-            "exe": "api-tester",
-            "iconUrl": "./icon.svg"
-          }
-        }
+  "build": {
+    "appId": "com.electron.api-tester",
+    "productName": "API Tester",
+    "copyright": "Copyright © cuikho210",
+    "asar": false,
+    "win": {
+      "target": "portable"
+    },
+    "linux": {
+      "desktop": {
+        "StartupNotify": "false",
+        "Encoding": "UTF-8"
+      },
+      "target": [
+        "AppImage"
       ],
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "cuikho210",
-              "name": "api-tester-electron"
-            }
-          }
-        }
-      ]
+      "icon": "./build/icons",
+      "category": "Development",
+      "maintainer": "cuikho210",
+      "vendor": "cuikho210"
     }
   }
 }
